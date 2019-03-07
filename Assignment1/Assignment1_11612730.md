@@ -1,15 +1,20 @@
-# CS205 C/ C++ Programming - Lab Assignment 1
+## CS205 C/ C++ Programming - Lab Assignment 1
 
-**Name**: 唐千栋
+**Name**: 唐千栋(Qiandong Tang)
 
 **SID**: 11612730
 
-## Part 1 - Analysis
+### Part 1 - Analysis
 
-The problem is to calculate the distance between two cities. Because the angle, which is described in the statement, is measured with degree, we need to first convert degree to radian. Then we use the method `cos()` in `<cmath>` to calculate the distance.
+The problem is to calculate the distance between two cities.  We have to read the name, latitude and longitude of two's cities. Then calculate the distance and output. Because the angle, which is described in the statement, is measured with degree, we need to first convert degree to radian. 
+$$
+phi=90-Latitude\\
+theta=Longitude\\
+c=\sin(phi_1)*\sin(phi_2)*\cos(theta_1-theta_2)+\cos(phi_1)*\cos(phi_2)
+$$
 
 
-## Part 2 - Code
+### Part 2 - Code
 
 ```c++
 #include <cmath>
@@ -54,7 +59,7 @@ int main() {
 
 ```
 
-## Part 3 - Result & Verification
+### Part 3 - Result & Verification
 
 > The verification is combined with the result queried in the website.
 
@@ -69,11 +74,15 @@ Output: The distance between Shenzhen and Beijing is 1942.82 km
 ```
 
 
-![1551500179197](C:\Users\stvn\AppData\Roaming\Typora\typora-user-images\1551500179197.png)
+![Screen Shot 2019-03-07 at 19.37.04](/Users/macbook/Desktop/Screen Shot 2019-03-07 at 19.37.04.png)
 
-## Part 4 - Difficulties & Solutions
+### Part 4 - Difficulties & Solutions
 
 1. The difficulty is to convert degree to radian. 
 
    We can multiply degree with pi/180 to get radian.
+
+2. The second problem is how to read a line from input.
+
+   We can use `cin.getline()`to read a line. 
 

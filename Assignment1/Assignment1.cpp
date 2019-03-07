@@ -34,6 +34,6 @@ int main() {
     double c = sin(phi1) * sin(phi2) * cos(theta1 - theta2) + cos(phi1) * cos(phi2);
     double d = 6371 * acos(c);
 
-    printf("The distance between %s and %s is %.2f km", s1, s2, d);
+    printf("The distance between %s and %s is %.2f km\n", s1, s2, d);
     return 0;
 }
