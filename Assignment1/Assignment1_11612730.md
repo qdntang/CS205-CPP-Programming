@@ -10,7 +10,8 @@ The problem is to calculate the distance between two cities.  We have to read th
 $$
 phi=90-Latitude\\
 theta=Longitude\\
-c=\sin(phi_1)*\sin(phi_2)*\cos(theta_1-theta_2)+\cos(phi_1)*\cos(phi_2)
+c=\sin(phi_1)*\sin(phi_2)*\cos(theta_1-theta_2)+\cos(phi_1)*\cos(phi_2)\\
+d=R*\arccos(c)
 $$
 
 
@@ -85,4 +86,3 @@ Output: The distance between Shenzhen and Beijing is 1942.82 km
 2. The second problem is how to read a line from input.
 
    We can use `cin.getline()`to read a line. 
-
