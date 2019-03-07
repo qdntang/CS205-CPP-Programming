@@ -37,12 +37,14 @@ string buffer;
 double get_arc(double x) { return x * PI / 180; }
 
 int main() {
-    printf("Please input the first city: <city name> <latitude> <longitude>\n");
+    printf("Please input the first city: <city name>\n");
     cin.getline(s1, maxn);
+    printf("Please input <latitude> <longitude>\n"); 
     scanf("%lf%lf", &phi1, &theta1);
     getchar();
-    printf("Please input the second city: <city name> <latitude> <longitude>\n");
+    printf("Please input the second city: <city name>\n");
     cin.getline(s2, maxn);
+    printf("Please input <latitude> <longitude>\n");
     scanf("%lf%lf", &phi2, &theta2);
 
     phi1 = 90 - phi1, phi2 = 90 - phi2;
@@ -54,7 +56,7 @@ int main() {
     double c = sin(phi1) * sin(phi2) * cos(theta1 - theta2) + cos(phi1) * cos(phi2);
     double d = 6371 * acos(c);
 
-    printf("The distance between %s and %s is %.2f km", s1, s2, d);
+    printf("The distance between %s and %s is %.2f km\n", s1, s2, d);
     return 0;
 }
 
@@ -67,15 +69,16 @@ int main() {
 Test case #1:
 
 ```
-Input: Shenzhen
-	   22.55 114.1
-	   Beijing
-	   39.9139 116.3917
-Output: The distance between Shenzhen and Beijing is 1942.82 km
+Input: 
+Shenzhen
+22.55 114.1
+Paris
+48.8567 2.3508	   
+Output: The distance between Shenzhen and Beijing is 9601.85 km
 ```
 
 
-![Screen Shot 2019-03-07 at 19.37.04](/Users/macbook/Desktop/Screen Shot 2019-03-07 at 19.37.04.png)
+![Screen Shot 2019-03-07 at 19.37.04](/Users/macbook/Documents/STEVEN/SUSTECH/C:C++/CS205-CPP-Programming/Assignment1/Screen Shot 2019-03-07 at 20.05.24.png)
 
 ### Part 4 - Difficulties & Solutions
 
@@ -86,3 +89,4 @@ Output: The distance between Shenzhen and Beijing is 1942.82 km
 2. The second problem is how to read a line from input.
 
    We can use `cin.getline()`to read a line. 
+

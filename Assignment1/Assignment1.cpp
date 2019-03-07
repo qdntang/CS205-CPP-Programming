@@ -17,12 +17,14 @@ string buffer;
 double get_arc(double x) { return x * PI / 180; }
 
 int main() {
-    printf("Please input the first city: <city name> <latitude> <longitude>\n");
+    printf("Please input the first city: <city name>\n");
     cin.getline(s1, maxn);
+    printf("Please input <latitude> <longitude>\n"); 
     scanf("%lf%lf", &phi1, &theta1);
     getchar();
-    printf("Please input the second city: <city name> <latitude> <longitude>\n");
+    printf("Please input the second city: <city name>\n");
     cin.getline(s2, maxn);
+    printf("Please input <latitude> <longitude>\n");
     scanf("%lf%lf", &phi2, &theta2);
 
     phi1 = 90 - phi1, phi2 = 90 - phi2;
