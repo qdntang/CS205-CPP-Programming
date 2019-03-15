@@ -22,19 +22,19 @@ int main() {
         }
         switch(i) {
             case START_CMD:
-                printf("command %s recongnized\n", command[i]);                
+                printf("command %s recognized\n", command[i]);                
                 break;
             case STOP_CMD:
-                printf("command %s recongnized\n", command[i]);
+                printf("command %s recognized\n", command[i]);
                 break;
             case RESTART_CMD:
-                printf("command %s recongnized\n", command[i]);
+                printf("command %s recognized\n", command[i]);
                 break;
             case STATUS_CMD:
-                printf("command %s recongnized\n", command[i]);
+                printf("command %s recognized\n", command[i]);
                 break;
             case EXIT_CMD:
-                printf("command %s recongnized\n", command[i]);
+                printf("command %s recognized\n", command[i]);
                 return 0;
                 break;
             default:
