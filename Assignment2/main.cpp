@@ -10,23 +10,23 @@
 using namespace std;
 
 int main() {
-    const char *command[] ={"start", "stop", "restart", "status", "exit"};
+    const char *command[] = {"start", "stop", "restart", "status", "exit"};
     char str[100];
-    while(true) {
+    while (true) {
         scanf("%s", str);
-	int i;
-	int len = strlen(str);
-	for(int j = 0; j < len; j++) {
-		str[j] = tolower(str[j]);
-	}
-        for(i = 0; i < 5; i++) {
-            if(strcmp(str, command[i]) == 0) {  
+        int i;
+        int len = strlen(str);
+        for (int j = 0; j < len; j++) {
+            str[j] = tolower(str[j]);
+        }
+        for (i = 0; i < 5; i++) {
+            if (strcmp(str, command[i]) == 0) {
                 break;
             }
         }
-        switch(i) {
+        switch (i) {
             case START_CMD:
-                printf("command %s recognized\n", command[i]);                
+                printf("command %s recognized\n", command[i]);
                 break;
             case STOP_CMD:
                 printf("command %s recognized\n", command[i]);
@@ -48,4 +48,3 @@ int main() {
     }
     return 0;
 }
-
