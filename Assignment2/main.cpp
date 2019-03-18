@@ -14,7 +14,11 @@ int main() {
     char str[100];
     while(true) {
         scanf("%s", str);
-        int i;
+	int i;
+	int len = strlen(str);
+	for(int j = 0; j < len; j++) {
+		str[j] = tolower(str[j]);
+	}
         for(i = 0; i < 5; i++) {
             if(strcmp(str, command[i]) == 0) {  
                 break;
