@@ -57,7 +57,6 @@ void read_utf(string path) {
     sz = 0;
     while (getline(ifile, line)) {
         if (line[0] == '#' || line.empty()) continue;
-        // cout << line << endl;
         istringstream sin(line);
         string field;
         vector<string> v;
@@ -69,7 +68,6 @@ void read_utf(string path) {
         blocks[sz].start = hex_string_to_int(vs[0]);
         blocks[sz].end = hex_string_to_int(vs[1]);
         blocks[sz].lang = v[1];
-        // cout << blocks[sz] << endl;
         sz++;
     }
 }

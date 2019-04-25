@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
     unsigned int   codepoint;
 
     for (i = 1; i < argc; i++) {
-      printf("%s\n", p);
+      p = (unsigned char *)argv[i];
       // Print as hexa encoding
       while (*p) {
          printf("%0X ", *p);
