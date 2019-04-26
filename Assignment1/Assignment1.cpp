@@ -41,7 +41,7 @@ int main() {
 	printf("Please input <longitude>\n");
 	get_double(theta2);
 
-	phi1 = 90 - phi1, phi2 = 90 - phi2;
+ 	phi1 = 90 - phi1, phi2 = 90 - phi2;
 	phi1 = get_arc(phi1);
 	phi2 = get_arc(phi2);
 	theta1 = get_arc(theta1);

@@ -9,6 +9,24 @@
 #define EXIT_CMD 4
 using namespace std;
 
+char* trim(char *str) {
+    char *end, *sp, *ep;
+    sp = str;
+    end = str + strlen(str) - 1;
+    int len;
+    ep = end;
+
+    while(sp <= end && isspace(*sp)) {
+        sp++;
+    }
+    while(ep >= sp && isspace(*ep)) {
+        ep--;
+    }
+    len = (ep < sp) ? 0 : (ep - sp) + 1;
+    sp[len] = '\0';
+    return sp;
+}
+
 int main() {
     const char *command[] = {"start", "stop", "restart", "status", "exit"};
     char str[100];
@@ -16,9 +34,6 @@ int main() {
         scanf("%s", str);
         int i;
         int len = strlen(str);
-        for (int j = 0; j < len; j++) {
-            str[j] = tolower(str[j]);
-        }
         for (i = 0; i < 5; i++) {
             if (strcmp(str, command[i]) == 0) {
                 break;
