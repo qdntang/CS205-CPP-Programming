@@ -1,5 +1,5 @@
-#ifndef LAB5_UTF8STRING_HPP
-#define LAB5_UTF8STRING_HPP
+#ifndef UTF8STRING_HPP
+#define UTF8STRING_HPP
 
 #include <cstdio>
 #include <cstring>
@@ -28,7 +28,7 @@ public:
 
     void replace(UTF8string to_remove, UTF8string replace);
 
-    friend std::ostream &operator<<(std::ostream &out, const UTF8string &us);
+    std::ostream &operator<<(std::ostream &out, const UTF8string &us);
 
     UTF8string operator+(const UTF8string &rhs) const;
 
@@ -44,4 +44,4 @@ private:
     std::string _str;
 };
 
-#endif //LAB5_UTF8STRING_HPP
+#endif
