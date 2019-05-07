@@ -1,16 +1,24 @@
-# the compiler: gcc for C program, define as g++ for C++
-CC = gcc
-# compiler flags:
-#  -g    adds debugging information to the executable file
-#  -Wall turns on most, but not all, compiler warnings
-CFLAGS  = -g -Wall
+CC=gcc
+CXX=g++
+CFLAGS=-Wall -g
+CXXFLAGS=-Wall -g -std=c++11
 
-# the build target executable:
-TARGET = UTF8string
+OBJ=utf8.o UTF8string.o testUTF8string.o
 
-all: $(TARGET)
+# link
+main: $(OBJ)
+	$(CXX) -o $@ $^ $(CXXFLAGS)
 
-$(TARGET): $(TARGET).cpp
-	$(CC) $(CFLAGS) -o $(TARGET) $(TARGET).cpp
+# compile only, C source
+%.o: %.c %.h
+	$(CC) -c -o $@ $< $(CFLAGS)
 
-clean: $(RM) $(TARGET)
+# compile only, C++ source
+%.o: %.cpp %.hpp %.c %.h
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+
+clean:
+	$(RM) $(OBJ)
+
+run:
+	./main
