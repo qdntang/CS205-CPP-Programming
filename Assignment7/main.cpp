@@ -1,13 +1,11 @@
-#include <cstdio>
-#include <iostream>
-#include <string>
-#include <type_traits>
+#include "template.hpp"
+using namespace std;
 
 struct A {
     int b;
 
-    A operator++(int){
-        A a;
+    const A operator++(int){
+        A a{};
         a.b = b;
         b++;
         return a;
@@ -24,8 +22,8 @@ struct A {
 };
 
 int main() {
-    std::cout << std::boolalpha << is_incrementable<int>() << std::endl;
-    std::cout << is_incrementable<std::string>() << std::endl;
-    std::cout << is_incrementable<A>() << std::endl;
+    cout << std::boolalpha << is_incrementable<int>() << endl;
+    cout << is_incrementable<string>() << endl;
+    cout << is_incrementable<A>() << endl;
     return 0;
 }
